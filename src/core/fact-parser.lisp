@@ -29,14 +29,14 @@
              (unless (and (consp default-form)
                           (eq (first default-form) 'default)
                           (= (length default-form) 2))
-               (error 'class-parsing-error :class-name class-name
+               (error 'class-parsing-error :cls-name class-name
                       :text "malformed DEFAULT keyword"))
              (second default-form))
            (build-one-slot (template)
              (destructuring-bind (keyword slot-name &optional default)
                  template
                (unless (eq keyword 'slot)
-                 (error 'class-parsing-error :class-name class-name
+                 (error 'class-parsing-error :cls-name class-name
                         :text "unrecognized keyword: ~A" keyword))
                `(,slot-name
                  :initarg ,(intern (symbol-name slot-name) 'keyword)
