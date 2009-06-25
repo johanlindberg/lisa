@@ -1,1 +1,10 @@
 This is a fork of http://sourceforge.net/projects/lisa
+
+TODO:
+1) Fix CL-implementation specific issues for OpenMCL and SBCL. DONE! 2009-06-24
+2) Replace the hash-table based implementation of the activation list with an
+   adjustable array.
+3) Implement support for not as a connected constraint
+4) Implement possibility to bind the same variable in two or more slots and make
+   it so that this creates a join node on that variable in the Rete network.
+5) ...
