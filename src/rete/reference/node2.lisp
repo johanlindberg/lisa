@@ -27,19 +27,33 @@
 (defclass node2 (join-node) ())
 
 (defmethod test-against-right-memory ((self node2) left-tokens)
-  (loop for right-token being the hash-values of (join-node-right-memory self)
+  (let ((tokens nil))
+    (maphash (lambda (k v)
+               (push (list k v) tokens))
+             (join-node-right-memory self))
+    (setf tokens (sort tokens #'> :key #'(lambda (x)
+                                           (fact-id (caar x)))))
+    (dolist (item tokens)
+      (let ((right-token (cadr item)))
+        (when (test-tokens self left-tokens right-token)
+          (pass-tokens-to-successor
+           self (combine-tokens left-tokens right-token)))))))
+        
+#+ignore
+(defmethod test-against-right-memory ((self node2) left-tokens)
+  (loop for right-token being the hash-values of (join-node-right-memory self) ; XXX
       do (when (test-tokens self left-tokens right-token)
            (pass-tokens-to-successor 
             self (combine-tokens left-tokens right-token)))))
 
 (defmethod test-against-left-memory ((self node2) (right-token add-token))
-  (loop for left-tokens being the hash-values of (join-node-left-memory self)
+  (loop for left-tokens being the hash-values of (join-node-left-memory self) ; XXX
       do (when (test-tokens self left-tokens right-token)
            (pass-tokens-to-successor 
             self (combine-tokens left-tokens right-token)))))
   
 (defmethod test-against-left-memory ((self node2) (right-token remove-token))
-  (loop for left-tokens being the hash-values of (join-node-left-memory self)
+  (loop for left-tokens being the hash-values of (join-node-left-memory self) ; XXX
       do (when (test-tokens self left-tokens right-token)
            (pass-tokens-to-successor
             self (combine-tokens
