@@ -40,8 +40,7 @@
                #+lispworks `(hcl::class-slots ,class)
                #+lucid `(clos:class-slots ,class)
                #+sbcl `(sb-pcl::class-slots ,class)
-               #+ccl `(ccl:class-slots ,class)
-               #+abcl `(mop:class-slots ,class))
+               #+ccl `(ccl:class-slots ,class))
              (class-slots1 (obj)
                `(class-slots*
                  (typecase ,obj
@@ -57,8 +56,7 @@
                #+lispworks `(hcl::slot-definition-name ,slot)
                #+lucid `(clos:slot-definition-name ,slot)
                #+sbcl `(slot-value ,slot 'sb-pcl::name)
-               #+ccl `(ccl:slot-definition-name ,slot)
-               #+abcl `(mop:slot-definition-name ,slot))
+               #+ccl `(ccl:slot-definition-name ,slot))
              (slot-initargs (slot)
                #+(and allegro (not (version>= 6))) `(clos::slotd-initargs ,slot)
                #+(and allegro (version>= 6))
@@ -69,8 +67,7 @@
                #+lispworks `(hcl::slot-definition-initargs ,slot)
                #+lucid `(clos:slot-definition-initargs ,slot)
                #+sbcl `(slot-value ,slot 'sb-pcl::initargs)
-               #+ccl `(ccl:slot-definition-initargs ,slot)
-               #+abcl `(mop::slot-definition-initargs ,slot))
+               #+ccl `(ccl:slot-definition-initargs ,slot))
              (slot-one-initarg (slot) `(car (slot-initargs ,slot)))
              (slot-alloc (slot)
                #+(and allegro (not (version>= 6)))
@@ -83,8 +80,25 @@
                #+lispworks `(hcl::slot-definition-allocation ,slot)
                #+lucid `(clos:slot-definition-allocation ,slot)
                #+sbcl `(sb-pcl::slot-definition-allocation ,slot)
-               #+ccl `(ccl:slot-definition-allocation ,slot)
-               #+abcl `(mop::slot-definition-allocation ,slot)))
+               #+ccl `(ccl:slot-definition-allocation ,slot)))
+
+    #+abcl (progn
+             (defmacro class-slots* (class)
+               `(mop:class-slots ,class))
+             (defmacro class-slots1 (obj)
+               `(class-slots*
+                 (typecase ,obj
+                   (class ,obj)
+                   (symbol (find-class ,obj))
+                   (t (class-of ,obj)))))
+             (defmacro slot-name (slot)
+               `(mop:slot-definition-name ,slot)) 
+             (defmacro slot-initargs (slot)
+               `(mop::slot-definition-initargs ,slot)) ; xxx
+             (defmacro slot-one-initarg (slot)
+               `(car (slot-initargs ,slot)))
+             (defmacro slot-alloc (slot)
+               `(mop::slot-definition-allocation ,slot))) ; xxx
 
     (defun class-slot-list (class &optional (all t))
       "Return the list of slots of a CLASS.
