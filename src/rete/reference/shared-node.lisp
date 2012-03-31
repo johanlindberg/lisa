@@ -22,7 +22,7 @@
 
 ;;; $Id: shared-node.lisp,v 1.12 2007/09/11 21:14:10 youngde Exp $
 
-(in-package "LISA")
+(in-package :lisa)
 
 (defclass shared-node ()
   ((successors :initform (make-hash-table :test #'equal)

@@ -22,7 +22,7 @@
 
 ;;; $Id: pkgdecl.lisp,v 1.81 2007/09/08 14:48:59 youngde Exp $
 
-(in-package "CL-USER")
+(in-package :cl-user)
 
 ;;; accommodate implementations whose CLOS is really PCL, like CMUCL...
 
@@ -33,166 +33,166 @@
                     `(clos ,@(package-nicknames 'pcl)))))
 
 (eval-when (:compile-toplevel :load-toplevel :execute)
-  (defpackage "LISA"
-    (:use "COMMON-LISP")
+  (defpackage :lisa
+    (:use :common-lisp)
     (:export
-      "ASSERT"
-      "DEFAULT"
+      :assert
+      :default
       .
       #1=(
-          "*SHOW-LISA-WARNINGS*"
-          "=>"
-          "ACTIVATION"
-          "ACTIVE-RULE"
-          "AGENDA"
-          "ALLOW-DUPLICATE-FACTS"
-          "ASSERT-INSTANCE"
-          "AUTO-FOCUS-P"
-          "BINDINGS"
-          "BREAKPOINTS"
-          "CLEAR"
-          "CLEAR-BREAK"
-          "CLEAR-BREAKS"
-          "CONSIDER-TAXONOMY"
-          "CONTEXT"
-          "CONTEXT-NAME"
-          "CONTEXTS"
-          "CURRENT-ENGINE"
-          "DEFCONTEXT"
-          "DEFFACTS"
-          "DEFIMPORT"
-          "DEFRULE"
-          "DEFTEMPLATE"
-          "DEPENDENCIES"
-          "DUPLICATE-FACT"
-          "ENGINE"
-          "EXISTS"
-          "FACT"
-          "FACT-ID"
-          "FACT-NAME"
-          "FACTS"
-          "FIND-CONTEXT"
-          "FIND-FACT-BY-ID"
-          "FIND-FACT-BY-NAME"
-          "FIND-RULE"
-          "FOCUS"
-          "FOCUS-STACK"
-          "HALT"
-          "IN-RULE-FIRING-P"
-          "INFERENCE-ENGINE"
-          "INITIAL-FACT"
-          "INSTANCE"
-          "LOGICAL"
-          "MAKE-INFERENCE-ENGINE"
-          "MARK-INSTANCE-AS-CHANGED"
-          "MODIFY"
-          "NEXT"
-          "REFOCUS"
-          "RESET"
-          "RESUME"
-          "RETE"
-          "RETE-NETWORK"
-          "RETRACT"
-          "RETRACT-INSTANCE"
-          "RETRIEVE"
-          "RULE"
-          "RULE-COMMENT"
-          "RULE-CONTEXT"
-          "RULE-DEFAULT-NAME"
-          "RULE-NAME"
-          "RULE-SALIENCE"
-          "RULE-SHORT-NAME"
-          "RULES"
-          "RUN"
-          "SET-BREAK"
-          "SHOW-NETWORK"
-          "SLOT"
-          "SLOT-VALUE-OF-INSTANCE"
-          "STANDARD-KB-CLASS"
-          "TEST"
-          "TOKEN"
-          "TOKENS"
-          "UNDEFCONTEXT"
-          "UNDEFRULE"
-          "UNWATCH"
-          "USE-DEFAULT-ENGINE"
-          "USE-FANCY-ASSERT"
-          "USE-LISA"
-          "WALK"
-          "WATCH"
-          "WATCHING"
-          "WITH-INFERENCE-ENGINE"
-          "WITH-SIMPLE-QUERY"))
-    (:shadow "ASSERT"))
+          :*show-lisa-warnings*
+          :=>
+          :activation
+          :active-rule
+          :agenda
+          :allow-duplicate-facts
+          :assert-instance
+          :auto-focus-p
+          :bindings
+          :breakpoints
+          :clear
+          :clear-break
+          :clear-breaks
+          :consider-taxonomy
+          :context
+          :context-name
+          :contexts
+          :current-engine
+          :defcontext
+          :deffacts
+          :defimport
+          :defrule
+          :deftemplate
+          :dependencies
+          :duplicate-fact
+          :engine
+          :exists
+          :fact
+          :fact-id
+          :fact-name
+          :facts
+          :find-context
+          :find-fact-by-id
+          :find-fact-by-name
+          :find-rule
+          :focus
+          :focus-stack
+          :halt
+          :in-rule-firing-p
+          :inference-engine
+          :initial-fact
+          :instance
+          :logical
+          :make-inference-engine
+          :mark-instance-as-changed
+          :modify
+          :next
+          :refocus
+          :reset
+          :resume
+          :rete
+          :rete-network
+          :retract
+          :retract-instance
+          :retrieve
+          :rule
+          :rule-comment
+          :rule-context
+          :rule-default-name
+          :rule-name
+          :rule-salience
+          :rule-short-name
+          :rules
+          :run
+          :set-break
+          :show-network
+          :slot
+          :slot-value-of-instance
+          :standard-kb-class
+          :test
+          :token
+          :tokens
+          :undefcontext
+          :undefrule
+          :unwatch
+          :use-default-engine
+          :use-fancy-assert
+          :use-lisa
+          :walk
+          :watch
+          :watching
+          :with-inference-engine
+          :with-simple-query))
+    (:shadow :assert))
 
-  (defpackage "LISA-USER"
-    (:use "COMMON-LISP")
-    (:shadowing-import-from "LISA" "ASSERT" "DEFAULT")
-    (:import-from "LISA" . #1#)))
+  (defpackage :lisa-user
+    (:use :common-lisp)
+    (:shadowing-import-from :lisa :assert :default)
+    (:import-from :lisa . #1#)))
 
-(defpackage "LISA.REFLECT"
-  (:use "COMMON-LISP")
-  (:nicknames "REFLECT")
+(defpackage :lisa.reflect
+  (:use :common-lisp)
+  (:nicknames :reflect)
   #+(or Allegro LispWorks)
-  (:import-from "CLOS"
-                "ENSURE-CLASS"
-                "CLASS-DIRECT-SUPERCLASSES"
-                "CLASS-FINALIZED-P"
-                "FINALIZE-INHERITANCE")
+  (:import-from :clos
+                :ensure-class
+                :class-direct-superclasses
+                :class-finalized-p
+                :finalize-inheritance)
 
   #+CMU
-  (:import-from "CLOS"
-                "CLASS-FINALIZED-P"
-                "FINALIZE-INHERITANCE")
+  (:import-from :clos
+                :class-finalized-p
+                :finalize-inheritance)
   #+:sbcl
-  (:import-from "SB-MOP"
-                "CLASS-FINALIZED-P"
-                "FINALIZE-INHERITANCE")
+  (:import-from :sb-mop
+                :class-finalized-p
+                :finalize-inheritance)
   (:export
-   "CLASS-ALL-SUPERCLASSES"
-   "CLASS-FINALIZED-P"
-   "CLASS-SLOT-LIST"
-   "ENSURE-CLASS"
-   "FINALIZE-INHERITANCE"
-   "FIND-DIRECT-SUPERCLASSES"))
+   :class-all-superclasses
+   :class-finalized-p
+   :class-slot-list
+   :ensure-class
+   :finalize-inheritance
+   :find-direct-superclasses))
 
-(defpackage "LISA.BELIEF"
-  (:use "COMMON-LISP")
-  (:nicknames "BELIEF")
+(defpackage :lisa.belief
+  (:use :common-lisp)
+  (:nicknames :belief)
   (:export
-   "ADJUST-BELIEF"
-   "BELIEF->ENGLISH"
-   "BELIEF-FACTOR"
-   "FALSE-P"
-   "TRUE-P"
-   "UKNOWN-P"))
+   :adjust-belief
+   :belief->english
+   :belief-factor
+   :false-p
+   :true-p
+   :unknown-p))
 
-(defpackage "LISA.HEAP"
-  (:use "COMMON-LISP")
-  (:nicknames "HEAP")
+(defpackage :lisa.heap
+  (:use :common-lisp)
+  (:nicknames :heap)
   (:export
-   "CREATE-HEAP"
-   "HEAP-CLEAR"
-   "HEAP-COUNT"
-   "HEAP-COLLECT"
-   "HEAP-EMPTY-P"
-   "HEAP-FIND"
-   "HEAP-INSERT"
-   "HEAP-PEEK"
-   "HEAP-REMOVE"))
+   :create-heap
+   :heap-clear
+   :heap-count
+   :heap-collect
+   :heap-empty-p
+   :heap-find
+   :heap-insert
+   :heap-peek
+   :heap-remove))
    
-(defpackage "LISA.UTILS"
-  (:use "COMMON-LISP")
-  (:nicknames "UTILS")
+(defpackage :lisa.utils
+  (:use :common-lisp)
+  (:nicknames :utils)
   (:export
-   "COLLECT"
-   "COMPOSE"
-   "COMPOSE-ALL"
-   "COMPOSE-F"
-   "FIND-AFTER"
-   "FIND-BEFORE"
-   "FIND-IF-AFTER"
-   "FLATTEN"
-   "LSTHASH"
-   "MAP-IN"
-   "STRING-TOKENS"))
+   :collect
+   :compose
+   :compose-all
+   :compose-f
+   :find-after
+   :find-before
+   :find-if-after
+   :flatten
+   :lsthash
+   :map-in
+   :string-tokens))

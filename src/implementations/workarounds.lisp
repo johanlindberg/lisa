@@ -23,7 +23,7 @@
 
 ;;; $Id: workarounds.lisp,v 1.1 2002/07/29 00:23:38 youngde Exp $
 
-(in-package "LISA")
+(in-package :lisa)
 
 #+cmu18 ;; workaround PCL bug, as per Paul Werkowski
 (defun pcl::inform-type-system-about-std-class (name) nil)

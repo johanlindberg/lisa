@@ -28,7 +28,7 @@
 
 ;;; This file courtesy of Fred Gilham.
 
-(in-package "LISA")
+(in-package :lisa)
 
 (defclass standard-kb-class (standard-class) ())
 

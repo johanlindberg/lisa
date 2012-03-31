@@ -22,7 +22,7 @@
 
 ;;; $Id: join-node.lisp,v 1.16 2007/09/11 21:14:10 youngde Exp $
 
-(in-package "LISA")
+(in-package :lisa)
 
 (defclass join-node ()
   ((successor :initform nil

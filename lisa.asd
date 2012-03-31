@@ -33,8 +33,8 @@
 
 (eval-when (:compile-toplevel :load-toplevel :execute)
   (unless (find-package :lisa-system)
-    (defpackage "LISA-SYSTEM"
-      (:use "COMMON-LISP" "ASDF"))))
+    (defpackage :lisa-system
+      (:use :common-lisp :asdf))))
 
 (in-package :lisa-system)
 

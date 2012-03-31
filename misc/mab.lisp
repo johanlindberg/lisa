@@ -24,11 +24,11 @@
 ;;; $Id: mab.lisp,v 1.53 2002/11/07 20:04:22 youngde Exp $
 
 (eval-when (:compile-toplevel :load-toplevel :execute)
-  (when (not (find-package "LISA-MAB"))
-    (defpackage "LISA-MAB"
-      (:use "LISA-LISP"))))
+  (when (not (find-package :lisa-mab))
+    (defpackage :lisa-mab
+      (:use :lisa-lisp))))
 
-(in-package "LISA-MAB")
+(in-package :lisa-mab)
 
 (make-inference-engine)
 

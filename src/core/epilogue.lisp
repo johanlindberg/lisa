@@ -22,7 +22,7 @@
 
 ;;; $Id: epilogue.lisp,v 1.2 2007/09/07 21:32:05 youngde Exp $
 
-(in-package "LISA")
+(in-package :lisa)
 
 (deftemplate initial-fact ())
 

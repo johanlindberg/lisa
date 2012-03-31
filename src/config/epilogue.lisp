@@ -22,7 +22,7 @@
 
 ;;; $Id: epilogue.lisp,v 1.1 2007/09/07 21:49:24 youngde Exp $
 
-(in-package "LISA")
+(in-package :lisa)
 
 (deftemplate initial-fact ())
 
@@ -33,14 +33,14 @@
 (defmacro define-lisa-lisp ()
   (flet ((externals-of (pkg)
            (loop for s being each external-symbol in pkg collect s)))
-    (let* ((lisa-externs (externals-of "LISA"))
-           (lisa-shadows (intersection (package-shadowing-symbols "LISA")
+    (let* ((lisa-externs (externals-of :lisa))
+           (lisa-shadows (intersection (package-shadowing-symbols :lisa)
                                        lisa-externs))
-           (cl-externs (externals-of "COMMON-LISP")))
-      `(defpackage "LISA-LISP"
-         (:use "COMMON-LISP")
-         (:shadowing-import-from "LISA" ,@lisa-shadows)
-         (:import-from "LISA" ,@(set-difference lisa-externs lisa-shadows))
+           (cl-externs (externals-of :common-lisp)))
+      `(defpackage :lisa-lisp
+         (:use :common-lisp)
+         (:shadowing-import-from :lisa ,@lisa-shadows)
+         (:import-from :lisa ,@(set-difference lisa-externs lisa-shadows))
          (:export ,@cl-externs)
          (:export ,@lisa-externs)))))
 

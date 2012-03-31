@@ -22,7 +22,7 @@
 
 ;;; $Id: lisa-debugger.lisp,v 1.11 2007/09/07 21:34:37 youngde Exp $
 
-(in-package "LISA")
+(in-package :lisa)
 
 (defvar *breakpoints* (make-hash-table))
 (defvar *stepping* nil)

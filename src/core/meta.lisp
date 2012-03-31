@@ -28,7 +28,7 @@
 
 ;;; $Id: meta.lisp,v 1.3 2007/09/08 14:48:58 youngde Exp $
 
-(in-package "LISA")
+(in-package :lisa)
 
 (defun get-class-name (meta-object)
   (fact-meta-object-class-name meta-object))

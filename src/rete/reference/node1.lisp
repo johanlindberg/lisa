@@ -22,7 +22,7 @@
 
 ;;; $Id: node1.lisp,v 1.16 2007/09/11 21:14:10 youngde Exp $
 
-(in-package "LISA")
+(in-package :lisa)
 
 (defclass node1 (shared-node)
   ((test :initarg :test

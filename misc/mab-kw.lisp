@@ -23,9 +23,9 @@
 
 ;;; $Id: mab-kw.lisp,v 1.4 2001/03/26 19:26:32 youngde Exp $
 
-(require "kw")
+(require :kw)
 
-(in-package "KW-USER")
+(in-package :kw-user)
 
 (def-kb-struct monkey
     location on-top-of holding)

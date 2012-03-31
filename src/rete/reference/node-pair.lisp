@@ -22,7 +22,7 @@
 
 ;;; $Id: node-pair.lisp,v 1.1 2002/10/03 14:48:08 youngde Exp $
 
-(in-package "LISA")
+(in-package :lisa)
 
 (defun make-node-pair (child parent)
   (cons child parent))

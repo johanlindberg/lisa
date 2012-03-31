@@ -23,7 +23,7 @@
 
 ;;; $Id: reflect.lisp,v 1.15 2007/09/08 14:48:59 youngde Exp $
 
-(in-package "LISA.REFLECT")
+(in-package :lisa.reflect)
 
 ;;; The code contained with the following MACROLET form courtesy of the PORT
 ;;; module, CLOCC project, http://clocc.sourceforge.net.

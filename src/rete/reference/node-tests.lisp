@@ -22,7 +22,7 @@
 
 ;;; $Id: node-tests.lisp,v 1.24 2007/09/17 22:42:39 youngde Exp $
 
-(in-package "LISA")
+(in-package :lisa)
 
 (defvar *node-test-table*)
 

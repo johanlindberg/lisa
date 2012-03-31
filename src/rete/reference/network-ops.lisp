@@ -22,7 +22,7 @@
 
 ;;; $Id: network-ops.lisp,v 1.22 2007/09/11 21:14:10 youngde Exp $
 
-(in-package "LISA")
+(in-package :lisa)
 
 (defun add-token-to-network (rete-network token-ctor)
   (loop for root-node being the hash-values of (rete-roots rete-network)

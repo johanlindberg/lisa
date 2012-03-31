@@ -25,7 +25,7 @@
 
 ;;; $Id: mab-clos.lisp,v 1.12 2007/09/11 21:14:08 youngde Exp $
 
-(in-package "LISA-USER")
+(in-package :lisa-user)
 
 (lisa:consider-taxonomy)
 

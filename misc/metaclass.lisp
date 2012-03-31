@@ -22,7 +22,7 @@
 
 ;;; $Id: metaclass.lisp,v 1.11 2002/12/03 16:03:47 youngde Exp $
 
-(in-package "CL-USER")
+(in-package :cl-user)
 
 (defclass standard-kb-class (standard-class) ())
 

@@ -22,7 +22,7 @@
 
 ;;; $Id: node2-exists.lisp,v 1.3 2007/09/11 21:14:10 youngde Exp $
 
-(in-package "LISA")
+(in-package :lisa)
 
 (defclass node2-exists (join-node) ())
 

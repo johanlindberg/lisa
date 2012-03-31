@@ -27,7 +27,7 @@
 
 ;;; $Id: utils.lisp,v 1.23 2004/09/15 17:57:15 youngde Exp $
 
-(in-package "LISA.UTILS")
+(in-package :lisa.utils)
 
 ;;; This version of FIND-BEFORE courtesy of Bob Bane, Global Science and
 ;;; Technology...

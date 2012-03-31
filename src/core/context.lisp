@@ -22,7 +22,7 @@
 
 ;;; $Id: context.lisp,v 1.3 2007/09/11 21:14:09 youngde Exp $
 
-(in-package "LISA")
+(in-package :lisa)
 
 (defclass context ()
   ((name :initarg :name

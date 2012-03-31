@@ -22,15 +22,15 @@
 
 ;;; $Id: rpc.lisp,v 1.5 2002/12/11 19:02:05 youngde Exp $
 
-(in-package "CL-USER")
+(in-package :cl-user)
 
 (eval-when (:compile-toplevel :load-toplevel :execute)
   (require 'aclrpc)
-  (unless (find-package "RPC")
-    (defpackage "RPC"
-      (:use "COMMON-LISP" "NET.RPC"))))
+  (unless (find-package :rpc)
+    (defpackage :rpc
+      (:use :common-lisp :net.rpc))))
 
-(in-package "RPC")
+(in-package :rpc)
 
 (defvar *server-host* "localhost")
 (defvar *server-port* 10000)

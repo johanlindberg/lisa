@@ -24,7 +24,7 @@
 
 ;;; $Id: pattern.lisp,v 1.2 2007/09/07 21:32:05 youngde Exp $
 
-(in-package "LISA")
+(in-package :lisa)
 
 ;;; Represents the canonical form of a slot within a pattern analysed by the
 ;;; DEFRULE parser. NAME is the slot identifier; VALUE is the slot's value,

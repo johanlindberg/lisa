@@ -22,7 +22,7 @@
 
 ;;; $Id: successor.lisp,v 1.4 2002/10/07 19:55:13 youngde Exp $
 
-(in-package "LISA")
+(in-package :lisa)
 
 (defun make-successor (node connector)
   (cons node connector))

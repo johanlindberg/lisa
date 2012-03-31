@@ -23,16 +23,16 @@
 
 ;;; $Id: aclrpc-support.lisp,v 1.2 2002/12/12 20:59:18 youngde Exp $
 
-(in-package "CL-USER")
+(in-package :cl-user)
 
 (eval-when (:compile-toplevel :load-toplevel :execute)
   (require 'aclrpc)
-  (unless (find-package "LISA.RPC")
-    (defpackage "LISA.RPC"
-      (:use "LISA-LISP" "NET.RPC")
-      (:nicknames "RPC"))))
+  (unless (find-package :lisa.rpc)
+    (defpackage :lisa.rpc
+      (:use :lisa-lisp :net.rpc)
+      (:nicknames :rpc))))
 
-(in-package "LISA.RPC")
+(in-package :lisa.rpc)
 
 (defclass remote-kb-class (standard-class)
   ((proxy-class-name :reader proxy-class-name)))

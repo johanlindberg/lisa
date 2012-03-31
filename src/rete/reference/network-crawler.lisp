@@ -22,7 +22,7 @@
 
 ;;; $Id: network-crawler.lisp,v 1.5 2007/09/11 21:14:10 youngde Exp $
 
-(in-package "LISA")
+(in-package :lisa)
 
 (defun show-network (rete-network &optional (strm *terminal-io*))
   (labels ((get-roots ()

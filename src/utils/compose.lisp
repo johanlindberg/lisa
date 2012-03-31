@@ -22,7 +22,7 @@
 
 ;;; $Id: compose.lisp,v 1.5 2001/03/15 16:00:31 youngde Exp $
 
-(in-package "LISA")
+(in-package :lisa)
 
 (defun build-lambda-expression (forms)
   (labels ((compose-body (forms &optional (body nil))

@@ -22,7 +22,7 @@
 
 ;;; $Id: tms.lisp,v 1.1 2002/11/14 14:45:38 youngde Exp $
 
-(in-package "LISA")
+(in-package :lisa)
 
 (defmethod pass-tokens-to-successor :before ((self join-node)
                                              (left-tokens remove-token))

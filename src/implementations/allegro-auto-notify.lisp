@@ -25,7 +25,7 @@
 
 ;;; $Id: allegro-auto-notify.lisp,v 1.2 2002/12/03 16:03:51 youngde Exp $
 
-(in-package "LISA")
+(in-package :lisa)
 
 (defclass standard-kb-class (standard-class) ())
 

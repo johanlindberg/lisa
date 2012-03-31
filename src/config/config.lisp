@@ -23,7 +23,7 @@
 
 ;;; $Id: config.lisp,v 1.1 2002/12/04 14:41:55 youngde Exp $
 
-(in-package "LISA")
+(in-package :lisa)
 
 ;;; The reference guide has complete details, but:
 ;;;

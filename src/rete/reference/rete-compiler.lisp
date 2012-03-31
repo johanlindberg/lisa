@@ -22,7 +22,7 @@
 
 ;;; $Id: rete-compiler.lisp,v 1.52 2007/09/11 21:14:10 youngde Exp $
 
-(in-package "LISA")
+(in-package :lisa)
 
 (defvar *root-nodes* nil)
 (defvar *rule-specific-nodes* nil)

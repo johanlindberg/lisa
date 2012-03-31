@@ -1,5 +1,5 @@
 
-(in-package "LISA")
+(in-package :lisa)
 
 (use-default-engine)
 

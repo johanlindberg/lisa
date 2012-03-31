@@ -23,7 +23,7 @@
 
 ;;; $Id: rpc-server.lisp,v 1.3 2002/12/12 20:59:18 youngde Exp $
 
-(in-package "RPC")
+(in-package :rpc)
 
 (defvar *lisa-server-host* "localhost")
 (defvar *lisa-server-port* 10000)
