@@ -156,6 +156,14 @@ initargs for all slots are returned, otherwise only the slots with
 (defun finalize-inheritance (class)
   (mop::finalize-inheritance class))
 
+#+allegro
+(defun class-finalized-p (class)
+ (aclmop::class-finalized-p class))
+
+#+allegro
+(defun finalize-inheritance (class)
+ (aclmop::finalize-inheritance class))
+
 (defun is-standard-classp (class)
   (or (eq (class-name class) 'standard-object)
        (eq (class-name class) t)))
